@@ -1,0 +1,216 @@
+/* ===== COURSES ===== */
+#courses {
+    background: #eef2fa;
+    padding: 100px 20px;
+}
+
+#courses h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-weight: 700;
+    padding: 0 0 10px 0;
+    margin: 5px 0 10px 0;
+    position: relative;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    line-height: 120% !important;
+    font-size: 32px;
+    color:  #000; 
+}
+
+#courses p.section-intro {
+    text-align: center;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 2px solid rgba(40,93,162,0);
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    border-color: #285DA2;
+}
+
+.course-card i {
+    font-size: 32px;
+    color: #285DA2; /* changed to site template blue */
+    margin-bottom: 15px;
+}
+
+.course-card h3 {
+    margin: 0 0 10px;
+    color: #0a0f29;
+    font-size: 20px;
+}
+
+.course-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Footer Logo Size */
+.footer-box .footer_blog .logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Modern Pricing Cards Styling */
+.pricing-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+    border: 2px solid rgba(40,93,162,0);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: #285DA2;
+}
+
+.pricing-card.professional {
+    border-color: rgba(40,93,162,0.18);
+}
+
+.pricing-card.professional:hover {
+    border-color: #285DA2;
+}
+
+.card-header {
+    padding: 30px 25px;
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-bottom: 1px solid #eee;
+}
+
+.plan-name {
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-weight: 700;
+    color: #0a0f29;
+    margin-bottom: 15px;
+}
+
+.plan-price { margin: 15px 0; }
+
+.currency { font-size: 48px; font-weight: 500; color:#285DA2; vertical-align:auto }
+
+.amount { font-size: 48px; font-weight: 700; color: #285DA2; }
+
+.plan-duration { font-size: 16px; color: #666; margin-top: 5px; }
+
+.card-body { padding: 30px 25px; }
+
+.feature-tag {
+    background: #EDF2F7;
+    color: #285DA2;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.features-list { list-style: none; padding: 0; margin: 0 0 25px 0; }
+
+.features-list li {
+    margin: 15px 0;
+    color: #555;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.features-list li i { color: #285DA2; margin-right: 10px; }
+
+.enroll-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #285DA2;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.enroll-button:hover { background: #1e4578; }
+
+.footer-box .footer_blog .logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing-cards-container { flex-direction: column; align-items: center; }
+    .pricing-card { width: 100%; max-width: 350px; margin-bottom: 30px; }
+}
+
+/* Small email text utility */
+.small-email {
+    font-size: 12px;
+    line-height: 2;
+    text-transform: lowercase;
+    color: #0a0f29;
+}
+
+/* Ensure small email is lowercase in header (override template uppercase rule) */
+nav.first-nav_contact div.left ul li a span.small-email,
+nav.first-nav_contact .right ul li a span.small-email,
+.footer_blog .small-email,
+.footer_content .small-email {
+    text-transform: lowercase !important;
+    font-size: 15px !important;
+}
+
+/* Slightly lower Program Duration heading in the pricing section */
+.section.layout_padding_2 .heading_main {
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .section.layout_padding_2 .heading_main {
+        margin-top: 18px;
+    }
+}
+
+
+
+
+
