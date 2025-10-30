@@ -2,6 +2,7 @@
 #courses {
     background: #eef2fa;
     padding: 100px 20px;
+    
 }
 
 #courses h2 {
@@ -30,7 +31,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -72,46 +73,7 @@
     height: auto;
 }
 
-/* Modern Pricing Cards Styling */
-.pricing-cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 40px 0;
-    padding: 20px;
-}
 
-.pricing-card {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    overflow: hidden;
-    border: 2px solid rgba(40,93,162,0);
-}
-
-.pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-color: #285DA2;
-}
-
-.pricing-card.professional {
-    border-color: rgba(40,93,162,0.18);
-}
-
-.pricing-card.professional:hover {
-    border-color: #285DA2;
-}
-
-.card-header {
-    padding: 30px 25px;
-    text-align: center;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    border-bottom: 1px solid #eee;
-}
 
 .plan-name {
     font-size: 24px;
@@ -125,51 +87,101 @@
 
 .plan-price { margin: 15px 0; }
 
-.currency { font-size: 48px; font-weight: 500; color:#285DA2; vertical-align:auto }
+.currency { font-size: 30px; font-weight: 700; color:#285DA2; vertical-align:auto }
 
-.amount { font-size: 48px; font-weight: 700; color: #285DA2; }
+.amount { font-size: 30px; font-weight: 700; color: #285DA2; }
 
 .plan-duration { font-size: 16px; color: #666; margin-top: 5px; }
 
-.card-body { padding: 30px 25px; }
+.pricing-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards in one row */
+    gap: 30px; /* more spacing between cards */
+    max-width: 1500px; /* slightly wider container */
+    margin: 0 auto; /* center container */
+    padding: 60px 20px;
+}
 
-.feature-tag {
-    background: #EDF2F7;
+.pricing-card {
+    background: #fff;
+    border-radius: 16px; /* slightly rounder corners */
+    padding: 35px 30px; /* more padding inside */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* equal height for all cards */
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card-header .plan-name {
+    font-size: 22px; /* slightly larger */
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.card-header .plan-price {
+    font-size: 26px; /* slightly larger */
+    font-weight: 700;
     color: #285DA2;
-    padding: 8px 15px;
-    border-radius: 20px;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
+}
+
+.card-header .plan-duration {
+    color: #555;
+    font-size: 16px; /* slightly larger */
     margin-bottom: 20px;
 }
 
-.features-list { list-style: none; padding: 0; margin: 0 0 25px 0; }
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0; /* more space below */
+}
 
 .features-list li {
-    margin: 15px 0;
-    color: #555;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
+    margin-bottom: 10px; /* bigger spacing */
+    font-size: 15px;
 }
-
-.features-list li i { color: #285DA2; margin-right: 10px; }
 
 .enroll-button {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
+     margin-top: auto; 
     background: #285DA2;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
+    color: #fff;
+    border: none;
+    padding: 15px 30px; /* bigger button */
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    
 }
 
-.enroll-button:hover { background: #1e4578; }
+.enroll-button:hover {
+    background: #1f467d;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .pricing-cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-cards-container {
+        grid-template-columns: 1fr; /* 1 per row on mobile */
+    }
+}
+
+
 
 .footer-box .footer_blog .logo {
     width: 150px;
@@ -213,4 +225,139 @@ nav.first-nav_contact .right ul li a span.small-email,
 
 
 
+/* Specific to the footer container only */
+.footer-box {
+    background: #FFF;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 15px;
+}
+/* Control logo size only in footer */
+.footer-logo {
+    max-width: 150px; /* You can change this value (e.g., 120px, 180px) */
+    height: auto;
+}
+.footer_section {
+    background-color: #f1f1f1;
+}
 
+
+.course_cards_section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.course_card {
+    background: #fff;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+.card_title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #0a3d62;
+}
+
+.course_card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6em;
+}
+
+
+
+
+.syllabus_grid {
+    padding: 60px 0;
+}
+
+.section_title_row .section_title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section_title_row .section_subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+    display: block;
+}
+
+/* Card Styling */
+.syllabus_card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%; /* Makes all cards same height */
+}
+
+/* Hover effect */
+.syllabus_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Icon Styling */
+.syllabus_card .icon {
+    font-size: 40px;
+    color: #285DA2;
+    margin-bottom: 15px;
+}
+
+/* Card Title */
+.syllabus_card h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* List Styling */
+.syllabus_card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: auto;
+}
+
+.syllabus_card ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.syllabus_card ul li::before {
+    content: "\f00c"; /* FontAwesome check icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color:#285DA2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .syllabus_card h4 {
+        font-size: 20px;
+    }
+    .syllabus_card ul li {
+        font-size: 15px;
+    }
+}
