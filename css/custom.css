@@ -95,7 +95,7 @@
 
 .pricing-cards-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cards in one row */
+    grid-template-columns: repeat(2, 1fr); /* 4 cards in one row */
     gap: 30px; /* more spacing between cards */
     max-width: 1500px; /* slightly wider container */
     margin: 0 auto; /* center container */
