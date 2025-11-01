@@ -150,6 +150,50 @@
                                 <input id="submit-button" type="submit" value="Submit">
                                 <input type="hidden" name="_next" value="https://vasavebusiness.com/form-process/success/thankyou.html">
                             </form>
+
+							<form id="contact-form" name="contact-form">
+    <fieldset>
+        <label class="field-text" for="full-name">Full Name</label>
+        <input type="text" name="name" id="full-name" placeholder="Enter your name" required>
+
+        <label class="field-text" for="email-address">Email Address</label>
+        <input type="email" name="email" id="email-address" placeholder="e.g. email@example.com" required>
+
+        <label class="field-text" for="telephone">Phone Number</label>
+        <input type="tel" name="phone" id="telephone" placeholder="Enter your Phone number" required>
+
+        <label class="field-text" for="message">Your Interest</label>
+        <textarea rows="5" name="message" id="message" placeholder="Enter Your Plan: Beginner or Intermediate" required></textarea>
+    </fieldset>
+
+    <input type="submit" id="submit-button" value="Submit">
+</form>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e){
+    e.preventDefault(); // Prevent default submission
+
+    const formData = new FormData(e.target);
+    const formObject = {};
+    formData.forEach((value, key) => formObject[key] = value);
+
+    // Send data to Google Apps Script
+    fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
+        method: "POST",
+        body: new URLSearchParams(formObject)
+    })
+    .then(() => {
+        // Redirect handled by script itself
+        // Fallback in case script doesn't redirect
+        window.location.href = "https://vasavebusiness.com/form-process/success/thankyou.html";
+    })
+    .catch((err) => {
+        console.error("Submission failed", err);
+        alert("Form submission failed. Please try again.");
+    });
+});
+</script>
+
                         </div>
                     </div>
                 </div>
@@ -239,28 +283,7 @@
     <script src="js/custom.js"></script>
 	<script>
 
-		/*open thankyou.html*/
-		<script>
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault(); // Stop normal submission
-
-    // Build POST request to Google Forms
-    const form = e.target;
-    const data = new FormData(form);
-
-    fetch("https://docs.google.com/forms/d/e/1FAIpQLSflgVvs9MxYds_2bItFLdJwd4cz1IHyc9kMhq0TIwskNu3OqQ/formResponse", {
-        method: "POST",
-        mode: "no-cors",
-        body: data
-    }).then(() => {
-        // Redirect to your custom thank-you page
-        window.location.href = "https://vasavebusiness.com/form-process/success/thankyou.html";
-    }).catch((error) => {
-        console.error("Form submission error:", error);
-        alert("There was a problem submitting the form. Please try again.");
-    });
-});
-</script>
+		
 	/* counter js */
 
 (function ($) {
