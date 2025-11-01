@@ -150,26 +150,6 @@
                                 <input id="submit-button" type="submit" value="Submit">
                                 <input type="hidden" name="_next" value="https://vasavebusiness.com/form-process/success/thankyou.html">
                             </form>
-
-							<form id="contact-form" name="contact-form">
-    <fieldset>
-        <label class="field-text" for="full-name">Full Name</label>
-        <input type="text" name="name" id="full-name" placeholder="Enter your name" required>
-
-        <label class="field-text" for="email-address">Email Address</label>
-        <input type="email" name="email" id="email-address" placeholder="e.g. email@example.com" required>
-
-        <label class="field-text" for="telephone">Phone Number</label>
-        <input type="tel" name="phone" id="telephone" placeholder="Enter your Phone number" required>
-
-        <label class="field-text" for="message">Your Interest</label>
-        <textarea rows="5" name="message" id="message" placeholder="Enter Your Plan: Beginner or Intermediate" required></textarea>
-    </fieldset>
-
-    <input type="submit" id="submit-button" value="Submit">
-</form>
-
-
                         </div>
                     </div>
                 </div>
@@ -259,6 +239,25 @@
     <script src="js/custom.js"></script>
 	<script>
 
+		<script>
+document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault(); // Prevent default form submission
+
+    // Submit to Google Forms via fetch
+    const formData = new FormData(this);
+    fetch("https://docs.google.com/forms/d/e/1FAIpQLSflgVvs9MxYds_2bItFLdJwd4cz1IHyc9kMhq0TIwskNu3OqQ/formResponse", {
+        method: "POST",
+        body: formData,
+        mode: "no-cors" // Google Forms doesn’t return CORS headers
+    }).then(() => {
+        // Redirect immediately after submission
+        window.location.replace("https://vasavebusiness.com/form-process/success/thankyou.html");
+    }).catch((err) => {
+        console.error(err);
+        alert("Submission failed. Please try again.");
+    });
+});
+</script>
 		
 	/* counter js */
 
