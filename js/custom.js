@@ -107,31 +107,4 @@
 
 
 
-/*----------*/
-
-<script>
-document.getElementById("contact-form").addEventListener("submit", function(e){
-    e.preventDefault(); // Prevent default submission
-
-    const formData = new FormData(e.target);
-    const formObject = {};
-    formData.forEach((value, key) => formObject[key] = value);
-
-    // Send data to Google Apps Script
-    fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
-        method: "POST",
-        body: new URLSearchParams(formObject)
-    })
-    .then(() => {
-        // Redirect handled by script itself
-        // Fallback in case script doesn't redirect
-        window.location.href = "https://vasavebusiness.com/form-process/success/thankyou.html";
-    })
-    .catch((err) => {
-        console.error("Submission failed", err);
-        alert("Form submission failed. Please try again.");
-    });
-});
-</script>
-
 
