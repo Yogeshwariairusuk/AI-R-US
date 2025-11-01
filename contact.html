@@ -238,6 +238,29 @@
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
 	<script>
+
+		/*open thankyou.html*/
+		<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Stop normal submission
+
+    // Build POST request to Google Forms
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("https://docs.google.com/forms/d/e/1FAIpQLSflgVvs9MxYds_2bItFLdJwd4cz1IHyc9kMhq0TIwskNu3OqQ/formResponse", {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+    }).then(() => {
+        // Redirect to your custom thank-you page
+        window.location.href = "https://vasavebusiness.com/form-process/success/thankyou.html";
+    }).catch((error) => {
+        console.error("Form submission error:", error);
+        alert("There was a problem submitting the form. Please try again.");
+    });
+});
+</script>
 	/* counter js */
 
 (function ($) {
