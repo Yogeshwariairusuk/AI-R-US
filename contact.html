@@ -145,10 +145,10 @@
                                     <input type="telephone" name="entry.914851434" id="telephone" placeholder="Enter your Phone number" required="">
                                     <label class="field-text" for="message">Your Interest</label>
                                     <textarea rows="5" name="entry.1105396815" id="message" placeholder="Enter Your Plan: Beginner or Intermediate" required=""></textarea>
-                                    <input type="hidden" name="_subject" id="email-subject" value="AI R US | Course Inquiry">
+                                    <input type="hidden" name="_subject" id="email-subject" value="AI R US | Course Enquiry">
                                 </fieldset>
                                 <input id="submit-button" type="submit" value="Submit">
-                                
+                                <input type="hidden" name="_next" value="https://vasavebusiness.com/form-process/success/thankyou.html">
                             </form>
                         </div>
                     </div>
@@ -238,26 +238,6 @@
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
 	<script>
-
-		
-document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault(); // Prevent default form submission
-
-    // Submit to Google Forms via fetch
-    const formData = new FormData(this);
-    fetch("https://docs.google.com/forms/d/e/1FAIpQLSflgVvs9MxYds_2bItFLdJwd4cz1IHyc9kMhq0TIwskNu3OqQ/formResponse", {
-        method: "POST",
-        body: formData,
-        mode: "no-cors" // Google Forms doesn’t return CORS headers
-    }).then(() => {
-        // Redirect immediately after submission
-        window.location.replace("https://vasavebusiness.com/form-process/success/thankyou.html");
-    }).catch((err) => {
-        console.error(err);
-        alert("Submission failed. Please try again.");
-    });
-});
-
 		
 	/* counter js */
 
