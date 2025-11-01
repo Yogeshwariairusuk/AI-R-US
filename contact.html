@@ -238,6 +238,27 @@
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
 	<script>
+/*---*/
+		document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Stop default browser submission
+
+    const form = e.target;
+
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        // Redirect to your thank-you page
+        window.location.href = 'https://vasavebusiness.com/form-process/success/thankyou.html';
+    })
+    .catch(error => {
+        alert('There was an error submitting the form.');
+        console.error(error);
+    });
+});
+	/*==	*/
 		
 	/* counter js */
 
