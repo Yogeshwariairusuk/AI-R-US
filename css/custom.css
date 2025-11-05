@@ -358,6 +358,18 @@ nav.first-nav_contact .right ul li a span.small-email,
         font-size: 15px;
     }
 }
+/*explore course button*/
+.pogoSlider-slide .slide_text {
+    position: absolute;      /* position relative to slide */
+    bottom: 30px;            /* distance from bottom of the slide */
+    left: 50%;               /* center horizontally */
+    transform: translateX(-50%); /* exact horizontal centering */
+    text-align: center;
+    width: 100%;
+}
 
-
+/* Optional: adjust button */
+.home_bt {
+    margin-top: 10px;
+}
 
