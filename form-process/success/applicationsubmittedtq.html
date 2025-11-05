@@ -128,16 +128,17 @@
 
     .btn {
       background: var(--primary-blue);
-      color: #fff;
-      padding: 12px 35px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 10px rgba(40, 93, 162, 0.2);
+  color: #fff;
+  padding: 18px 50px;      /* increased padding for bigger size */
+  border-radius: 35px;      /* slightly bigger for proportion */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.3em;         /* larger text */
+  transition: 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;                /* more spacing between icon and text */
+  box-shadow: 0 5px 12px rgba(40, 93, 162, 0.25);  /* slightly stronger shadow */
     }
 
     .btn:hover {
@@ -216,7 +217,9 @@
     <h1>Thank You!</h1>
     <p>Your response has been received successfully.<br>
        We appreciate your interest and will get back to you soon.</p>
-    <a href="/index.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Home page</a>
+     <a href="index.html" class="back-home-btn">
+    <i class="fas fa-home"></i> Back to Home
+  </a>
   </div>
 
 </body>
