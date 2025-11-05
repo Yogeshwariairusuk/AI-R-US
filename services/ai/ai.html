@@ -526,25 +526,22 @@
     </div>
   </div>
 
-  <script>
+ <script>
     const openForm = document.getElementById('openForm');
     const closeForm = document.getElementById('closeForm');
     const popupForm = document.getElementById('popupForm');
 
     openForm.addEventListener('click', () => {
       popupForm.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
     });
 
     closeForm.addEventListener('click', () => {
       popupForm.style.display = 'none';
-      document.body.style.overflow = 'auto';
     });
 
     window.addEventListener('click', (e) => {
       if (e.target === popupForm) {
         popupForm.style.display = 'none';
-        document.body.style.overflow = 'auto';
       }
     });
   </script>
