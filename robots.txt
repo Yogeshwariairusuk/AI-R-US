@@ -18,4 +18,11 @@ Allow: /cookies-policy.pdf
 Allow: /privacy-policy.pdf
 Allow: /terms&amp;conditions.pdf
 
-Sitemap: https://www.vasavebusiness.com/sitemap.xml
+
+
+Allow: /services/ai/ai.html
+Allow: /services/cloud/cloudcomputing.html
+Allow: /services/java/java.html
+Allow: /services/webdevelopment/webdevelopment.html
+
+Sitemap: https://airus.uk/sitemap.xml
