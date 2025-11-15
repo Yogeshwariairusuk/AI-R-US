@@ -18,7 +18,28 @@
             },
             "telephone": "+91-7676749499"
         }
-    </script>
+    </script><style>
+#chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #4CAF50;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    z-index: 99999;
+    box-shadow: 0 0 10px #888;
+    transition: transform 0.3s;
+}
+#chatbot-toggle:hover {
+    transform: scale(1.1);
+}
+</style>
     <script>
         (function (w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -589,28 +610,7 @@ function botReply(message) {
     appendMessage("AI R US", finalReply);
 }
 </script><!-- Floating Chat Icon -->
-<style>
-#chatbot-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #4CAF50;
-    color: white;
-    font-size: 30px;
-    text-align: center;
-    line-height: 60px;
-    cursor: pointer;
-    z-index: 99999;
-    box-shadow: 0 0 10px #888;
-    transition: transform 0.3s;
-}
-#chatbot-toggle:hover {
-    transform: scale(1.1);
-}
-</style>
+
 
 <!-- Floating Icon -->
 <div id="chatbot-toggle">💬</div>
