@@ -523,11 +523,74 @@
                 js.src = 'https://connect.facebook.net/en_GB/sdk/xfbml.customerchat.js';
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-        </script>
+        </script><script>
+// Conversational chatbot
+const conversationHistory = []; // keeps track of questions for context
+
+function botReply(message) {
+    message = message.toLowerCase();
+    let replies = [];
+
+    // Check for keywords in user message
+    const keys = ["java", "ai", "cloud", "web", "fees", "location", "timings", "placement", "registration", "contact", "course"];
+    let found = false;
+
+    for (let key of keys) {
+        if (message.includes(key)) {
+            found = true;
+            switch(key) {
+                case "ai":
+                    replies.push("Our AI course covers fundamentals, machine learning, neural networks, and real-world projects. Would you like info on fees or timings?");
+                    break;
+                case "java":
+                    replies.push("Our Java course includes core programming, OOP concepts, and building applications. Do you want to know fees or class timings?");
+                    break;
+                case "cloud":
+                    replies.push("Our Cloud Computing course teaches AWS, Azure, and infrastructure management. Interested in fees or schedule?");
+                    break;
+                case "web":
+                    replies.push("Web Development course covers HTML, CSS, JS, and frameworks. Should I tell you fees or timings?");
+                    break;
+                case "fees":
+                    replies.push("Course fees vary by program. For exact details, you can contact us at ask@airus.uk or call 7676749499.");
+                    break;
+                case "location":
+                    replies.push("We are at 1st Floor Above Manyavar, Ward No.6 Savalanga Road 1st cross Jayanagar, Shivamogga - 577201.");
+                    break;
+                case "timings":
+                    replies.push("Classes run Monday to Saturday, 10 AM to 6 PM. Some courses have flexible timings.");
+                    break;
+                case "placement":
+                    replies.push("We assist students with placement guidance and internships through our industry network.");
+                    break;
+                case "registration":
+                    replies.push("You can register via our contact form or call 7676749499.");
+                    break;
+                case "contact":
+                    replies.push("Reach us at ask@airus.uk or call 7676749499.");
+                    break;
+                case "course":
+                    replies.push("We offer courses in AI, Cloud Computing, Web Development, and Java Programming. Which one are you interested in?");
+                    break;
+            }
+        }
+    }
+
+    // Default reply if nothing matches
+    if (!found) {
+        replies.push("I'm sorry, I didn't understand that. Could you rephrase or ask about courses, fees, timings, or contact?");
+    }
+
+    // Keep conversation context
+    conversationHistory.push({ user: message, bot: replies.join(" ") });
+
+    // Display the reply
+    const finalReply = replies.join("<br><br>");
+    appendMessage("AI R US", finalReply);
+}
+</script>
+
 </body>
-<a href="https://api.whatsapp.com/send?phone=917676749499&text=Hello%20AI%20R%20US" class="whatsapp_float"
-    target="_blank">
-    <img src="img/icons/whatsapp.png" class="whatsapp-icon">
-</a>
+
 
 </html>
