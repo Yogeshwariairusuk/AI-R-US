@@ -588,7 +588,52 @@ function botReply(message) {
     const finalReply = replies.join("<br><br>");
     appendMessage("AI R US", finalReply);
 }
+</script><!-- Floating Chat Icon -->
+<style>
+#chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #4CAF50;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    z-index: 99999;
+    box-shadow: 0 0 10px #888;
+    transition: transform 0.3s;
+}
+#chatbot-toggle:hover {
+    transform: scale(1.1);
+}
+</style>
+
+<!-- Floating Icon -->
+<div id="chatbot-toggle">💬</div>
+
+<!-- Chatbot Container -->
+<div id="chatbot-container">
+    <div id="chatbot-header">Chat with AI R US</div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type a message..." />
+        <button id="chatbot-send">Send</button>
+    </div>
+</div>
+
+<script>
+// Toggle chatbot on icon click
+const chatbotToggle = document.getElementById('chatbot-toggle');
+const chatbotContainer = document.getElementById('chatbot-container');
+chatbotToggle.addEventListener('click', () => {
+    chatbotContainer.style.display = chatbotContainer.style.display === 'flex' ? 'none' : 'flex';
+});
 </script>
+
 
 </body>
 
